@@ -1,0 +1,22 @@
+{
+  "name": "open-multi-window",
+  "version": "1.0.0",
+  "description": "open multi window",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HelloYukyung/open-multi-window.git"
+  },
+  "keywords": [
+    "open-multi-window"
+  ],
+  "author": "yukyung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HelloYukyung/open-multi-window/issues"
+  },
+  "homepage": "https://github.com/HelloYukyung/open-multi-window#readme"
+}
