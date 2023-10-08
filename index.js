@@ -1,4 +1,4 @@
-function openMultiWindow(windows, options = { delay: 1000 }) {
+function openMultiWindow(windows, options = {}) {
   return new Promise((resolve, reject) => {
     const openedWindows = [];
     let currentIndex = 0;
@@ -23,7 +23,7 @@ function openMultiWindow(windows, options = { delay: 1000 }) {
         }
         currentIndex++;
 
-        setTimeout(openNextWindow, options.delay);
+        setTimeout(openNextWindow, currentIndex);
       } else {
         resolve(openedWindows);
       }
