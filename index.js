@@ -1,33 +1,36 @@
-function openMultiWindow(windows, options, callback) {
-  const openedWindows = [];
+function openMultiWindow(windows, options = { delay: 1000 }) {
+  return new Promise((resolve, reject) => {
+    const openedWindows = [];
+    let currentIndex = 0;
 
-  function openNextWindow(index) {
-    if (index < windows.length) {
-      const { url, name } = windows[index];
-      const win = window.open(url, name || "", ...options);
+    function openNextWindow() {
+      if (currentIndex < windows.length) {
+        const { url, name = "" } = windows[currentIndex];
+        try {
+          const win = window.open(url, name, options);
 
-      if (win) {
-        openedWindows.push(win);
-        win.addEventListener("load", () => {
-          openNextWindow(index + 1);
-        });
+          if (win) {
+            openedWindows.push(win);
+          } else {
+            const error = new Error(
+              `Failed to open window at index ${currentIndex}: URL ${url}`
+            );
+            reject(error);
+          }
+        } catch (error) {
+          const errorMsg = `Error opening window at index ${currentIndex}: ${error.message}`;
+          reject(new Error(errorMsg));
+        }
+        currentIndex++;
+
+        setTimeout(openNextWindow, options.delay);
       } else {
-        console.error(`Failed to open window at index ${index}`);
-        openNextWindow(index + 1);
-      }
-    } else {
-      if (typeof callback === "function") {
-        callback(openedWindows);
+        resolve(openedWindows);
       }
     }
-  }
 
-  openNextWindow(0);
+    openNextWindow();
+  });
 }
-
-// 예시 사용법:
-// openMultiWindow(windows, options, (openedWindows) => {
-//   // 모든 창이 열린 후에 실행할 코드
-// });
 
 module.exports = openMultiWindow;
