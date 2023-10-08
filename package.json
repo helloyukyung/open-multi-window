@@ -1,8 +1,9 @@
 {
   "name": "open-multi-window",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "open multi window",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
