@@ -6,9 +6,15 @@ function openMultiWindow(windows, options = {}) {
     function openNextWindow() {
       if (currentIndex < windows.length) {
         const { url, name = "" } = windows[currentIndex];
+        if (!isValidURL(url)) {
+          const error = new Error(
+            `Invalid URL at index ${currentIndex}: ${url}`
+          );
+          reject(error);
+          return;
+        }
         try {
           const win = window.open(url, name, options);
-
           if (win) {
             openedWindows.push(win);
           } else {
@@ -31,6 +37,15 @@ function openMultiWindow(windows, options = {}) {
 
     openNextWindow();
   });
+}
+
+function isValidURL(url) {
+  try {
+    new URL(url);
+    return true;
+  } catch (error) {
+    return false;
+  }
 }
 
 module.exports = openMultiWindow;
