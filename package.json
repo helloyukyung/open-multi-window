@@ -1,10 +1,11 @@
 {
   "name": "open-multi-window",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "open multi window",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
+    "build": "rm -rf dist && babel index.js -d dist --source-maps",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,16 +17,21 @@
     "front-end",
     "frontend",
     "web",
+    "window",
+    "open",
     "open-multi-window",
     "multi-window",
-    "open-window",
-    "open",
-    "window"
+    "open-window"
   ],
   "author": "yukyung",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/HelloYukyung/open-multi-window/issues"
   },
-  "homepage": "https://github.com/HelloYukyung/open-multi-window#readme"
+  "homepage": "https://github.com/HelloYukyung/open-multi-window#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20"
+  }
 }
