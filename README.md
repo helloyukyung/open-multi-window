@@ -20,8 +20,6 @@ yarn add open-multi-window
 
 #### Import the module
 
-Import the module to use it in your project.
-
 ```js
 const openMultiWindow = require("open-multi-window");
 ```
