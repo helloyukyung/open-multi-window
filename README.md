@@ -20,8 +20,16 @@ yarn add open-multi-window
 
 #### Import the module
 
+Import the module to use it in your project.
+
 ```js
 const openMultiWindow = require("open-multi-window");
+```
+
+Or
+
+```js
+import openMultiWindow from "open-multi-window";
 ```
 
 #### Function call
@@ -32,7 +40,7 @@ You can open multiple popup windows by calling the openMultiWindow function. Thi
 const windows = [
   { url: "https://google.com", name: "google" },
   { url: "https://github.com", name: "github" },
-  { url: "https://www.npmjs.com", name: "npm" },
+  { url: "https://npmjs.com", name: "npm" },
 ];
 
 const options = {
