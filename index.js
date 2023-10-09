@@ -11,6 +11,8 @@ function openMultiWindow(windows, options = {}) {
             `Invalid URL at index ${currentIndex}: ${url}`
           );
           reject(error);
+          currentIndex++;
+          openNextWindow();
           return;
         }
         try {
@@ -29,7 +31,7 @@ function openMultiWindow(windows, options = {}) {
         }
         currentIndex++;
 
-        setTimeout(openNextWindow, currentIndex);
+        setTimeout(openNextWindow, 1000);
       } else {
         resolve(openedWindows);
       }
