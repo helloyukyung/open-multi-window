@@ -67,7 +67,7 @@ const options = {
 
 ## License
 
-This library is distributed under the MIT License. For more information, refer to the LICENSE file.
+This library is distributed under the MIT License.
 
 ## Contributions
 

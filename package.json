@@ -1,6 +1,6 @@
 {
   "name": "open-multi-window",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "open multi window",
   "main": "index.js",
   "types": "index.d.ts",
@@ -12,6 +12,10 @@
     "url": "git+https://github.com/HelloYukyung/open-multi-window.git"
   },
   "keywords": [
+    "javascript",
+    "front-end",
+    "frontend",
+    "web",
     "open-multi-window",
     "multi-window",
     "open-window",
